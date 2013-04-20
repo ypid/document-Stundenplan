@@ -1,0 +1,232 @@
+%% <Schule/Schulischer-Kurztext.tex> Vorlageversion 1.1.1 <Robin Schneider>
+%%%Präambel
+%\RequirePackage{snapshot}		%% \jobname.dep
+%\listfiles	%% listfiles in die Logdatei
+\RequirePackage{RequirePackageRS}
+\documentclass[12pt,landscape,a4paper,ngerman,numbers=noenddot,toc=listof]{scrartcl}	%% ,draft
+\usepackage{
+%	physicsRS,
+	scrartclRS,
+	defaultRS,
+%	literatureRS,
+%	debugRS,
+	timeRS,
+	graphicRS,
+%	mathematicsRS,
+%	gamesRS,
+	layoutRS,
+	footingRS,
+	extensionsRS,
+	docExtensionsRS,
+	schoolRS,
+%	chemistryRS,
+}
+%% Spetzifische angaben
+%\setboolean{licenseNameDate}{false}
+\readgitstat{7}
+\SetTITEL{Stundenplan}
+\SetAUTHOR{1}{}
+\SetKLASSE{12}
+%\SetSUBJECT{Epochenheft}
+\SetURL{http://ypid.files.wordpress.com/2013/04//stundenplan.pdf}
+\SetGitURL{https://github.com/ypid/document-Stundenplan}
+\choosedefaultlicense
+\SetCREATEDATE{2011}{09}{15}{07}{11}{50}		%% {YYYY}{MM}{DD}{HH}{MM}{SS}
+\SetABGABEDATUM{1}{2011}{09}{16}{1}
+\ifoot{\ABGABEDATUM}
+\cfoot{\printendsignature}
+\ofoot{\printlicenseicons \AUTHOR}%\chead{}
+\usepackage{
+	schoolPDFinfoRS,
+	tableRS,
+}
+\SetDraft{on}
+\input{files/hacks}
+%%%Body
+\begin{document}
+\setcounter{headpages}{0}\pagenumbering{arabic}
+%%%%%%%%%%%
+~
+\vspace*{-2.7cm}
+\sectionStar{\TITEL~-- Klasse \KLASSE}{stundenplan}
+%\renewcommand{\RM}[1]{#1}
+\newcommand{\wochentag}[1]{\textbf{#1}}
+\newcommand{\fach}[1]{\textbf{#1}}
+\newcommand{\notice}[1]{(\textit{#1})}
+\newcommand{\raum}[1]{(#1)}
+\newcommand{\tablespalten}{6}
+\renewcommand{\longtableheader}{
+\hline \backslashbox[2.6cm]{Zeit}{Tag} & \multicolumn{1}{c|}{\wochentag{Montag}}
+& \multicolumn{1}{c|}{\wochentag{Dienstag}} & \multicolumn{1}{c|}{\wochentag{Mittwoch}}
+& \multicolumn{1}{c|}{\wochentag{Donnertag}} & \multicolumn{1}{c|}{\wochentag{Freitag}}
+\\ \hline}
+\newcommand{\longtableworkcolor}{\rowcolor{blue!20}}
+\newcommand{\longtableworkcolorTwo}{}	% \rowcolor{white}	%%???
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\longtableheader
+\endfirsthead
+
+\longtableheader
+\endhead
+
+\hline \multicolumn{\tablespalten}{|r|}{\longtableendfoot} \\ \hline
+\endfoot
+
+\hline% \hline
+\endlastfoot
+
+\hline
+\longtableworkcolor 07:40--09:25 & \fach{Hauptunterricht}
+& \fach{HU} & \fach{HU}
+& \fach{HU} & \fach{HU}
+\\
+
+\longtableworkcolorTwo 09:45--10:25 \textit{MR}
+& \fach{Geschichte \raum{Gr. \RM{1}}}
+& \fach{Mathe \raum{Gr. \RM{3}}}
+& \fach{Deutsch \raum{Gr. \RM{3}}}
+& \fach{Kompetenzp. \raum{Gr. \RM{3}}}
+& \fach{\textdiscount\ \raum{Gr. \RM{3}}}
+\\
+
+\longtableworkcolor 09:45--10:25 \textit{Abi}
+& \fach{Mathe}
+& \fach{Geschichte}
+& \fach{Mathe}
+& \fach{Biologie}
+& \fach{Geschichte}
+\\
+
+\longtableworkcolorTwo 10:30--11:10 \textit{MR}
+& \fach{\textdiscount\ \raum{Kost.Bar}}
+& \fach{Englisch \raum{Gr. \RM{3}}}
+& \fach{Mathe \raum{Gr. \RM{3}}}
+& \fach{Mathe \raum{Gr. \RM{3}}}
+& \fach{Englisch \raum{Gr. \RM{3}}}
+\\
+
+\longtableworkcolor 10:30--11:10 \textit{Abi}
+& \fach{Deutsch}
+& \fach{Deutsch}
+& \fach{Französisch}
+& \fach{Biologie}
+& \fach{Mathe}
+\\
+
+%% 4 MR
+\longtableworkcolorTwo 11:20--12:00 \textit{MR}
+& \fach{Englisch \raum{Gr. \RM{1}}}
+& \fach{Sport}
+&
+& \fach{Englisch \raum{Gr. \RM{3}}}
+& \fach{Deutsch \raum{Gr. \RM{3}}}
+\\
+
+
+\longtableworkcolor 11:20--12:00 \textit{Abi}
+& \fach{Französisch}
+& \fach{Mathe}
+& \multirow{-2}{*}{\fach{OS-Chor}}
+& \fach{Mathe}
+& \fach{Englisch}
+\\
+
+\longtableworkcolorTwo 12:05--12:45 \textit{MR}
+& \fach{Englisch \raum{Gr. \RM{1}}}
+& \fach{Sport}
+& \multirow{-2}{*}{\fach{bzw.}}
+& \fach{Mathe \raum{Gr. \RM{3}}}
+&
+\\
+
+\longtableworkcolor  12:05--12:45 \textit{Abi}
+& \fach{Französisch}
+& \fach{Englisch}
+& \multirow{-2}{*}{\fach{Orchester}}
+& \fach{Französisch}
+& \multirow{-2}{*}{\fach{Verfügung}}
+\\ \hline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\rowcolor{green} 12:45--13:45
+& \multicolumn{5}{c|}{\fach{Mittagspause}} \\ \hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\longtableworkcolorTwo 13:45--15:05 \textit{MR}
+&
+&
+&
+&
+&
+\\
+
+\longtableworkcolor 13:45--15:05 \textit{Abi}
+& \multirow{-2}{*}{\fach{künstlerisch praktisch}}
+&
+& \fach{Englisch}
+&
+&
+\\
+
+\longtableworkcolorTwo 15:10--16:30 \textit{MR}
+& \multirow{-2}{*}{\notice{nicht das ganze Jahr}}
+&
+&
+&
+&
+\\
+
+\longtableworkcolor 15:10--16:30 \textit{Abi}
+& \multirow{-2}{*}{\fach{künstlerisch praktisch}}
+&
+& \fach{Sport}
+&
+&
+\\
+\end{longtable}
+
+
+\vspace{-1ex}
+Mathematik (Mittlere Reife): Di. Algebra,
+Mi. Trigonometrie Stochastik,
+Do. (10:30--11:10) Analytische Geometrie,
+Do. (12:05--12:45) Analysis
+
+
+%\ifDraft{
+\setcounter{sectionsV}{\value{section}}		%% Speichert die sectionnummer vor \appendix zwischen
+\appendix	%% Sorgt für Buchstaben im Inhaltsverzeichnis
+
+%\vfill
+
+
+\printURLlong[2cm]
+
+\printlicense
+\printendsignature
+
+\newpage\Statistiken
+  \begin{sourcefiletable}{1}
+    \Isourcefile{Hauptdatei}{\jobname.tex}
+    \Isourcefile{\LaTeX-Hacks}{files/hacks.tex}
+%    \sourcefile{Metainformationen}{files/metainfos.tex}
+%    \sourcefile{Titelseite}{files/titlepage.tex}
+%    \sourcefile{Literatur-Datenbank}{files/bibliographie.bib}
+  \end{sourcefiletable}
+%}{}
+%\ifDraft{
+%  \begin{landscape}	%% ist bereits landscape (Klassenoption)
+	\pagestyle{empty}
+	\pdfbookmark[2]{Versionshinweise}{versionshinweise}
+	\subsection*{Versionshinweise}
+	\input{files/git/versions-log}
+	\printgitstatlandscape{1}
+%  \end{landscape}
+	\printgitstat{1}
+%	\subsubsection*{Dateien?}
+%	\pdfbookmark[3]{Dateien?}{files_by_date}
+%	\includegraphics[width=14cm]{files/git/stats/files_by_date-crop}
+%	\listoffixmes
+%}{}
+\end{document}
